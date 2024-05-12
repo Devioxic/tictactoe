@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeAutoFeedback</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main-title{
+            width: 100%;
+            font-size: 42px;
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        #output{
+            width: 100%;
+        }
+
+        .container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .container > .title{
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .container > .description{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">NodeAutoFeedback</h1>
+
+    <div id="output"></div>
+    <script>
+        function writeFeedback(errors){
+            let output = document.getElementById("output");
+
+            if(errors.length <= 0){
+                let date = new Date();
+                let time = date.toLocaleString('sv-SE');
+
+
+                let container = document.createElement("div");
+                container.setAttribute("class", "container");
+                
+                let title = document.createElement("h4");
+                title.setAttribute("class", "title");
+                title.textContent = "Du är nu klar med första steget på laborationen! " + time;
+
+                let text = document.createElement("p");
+                text.setAttribute("class", "description");
+                text.textContent = "Ta en bild på detta och skicka med den i din inlämning";
+
+                container.appendChild(title);
+                container.appendChild(text);
+
+
+                output.appendChild(container);
+            }else{
+                errors.forEach((e) => {
+                    let container = document.createElement("div");
+                    container.setAttribute("class", "container");
+                    
+                    let title = document.createElement("h4");
+                    title.setAttribute("class", "title");
+                    title.textContent = e.title;
+
+                    let text = document.createElement("p");
+                    text.setAttribute("class", "description");
+                    text.textContent = e.description;
+
+                    container.appendChild(title);
+                    container.appendChild(text);
+
+
+                    output.appendChild(container);
+                })
+            }
+            
+        }
+    </script>
+</body>
+</html>

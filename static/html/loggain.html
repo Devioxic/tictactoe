@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Tic-Tac-Toe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class="container p-2">
+        <main class="jumbotron text-center mb-5 pb-4">          
+            <h1>Tic-Tac-Toe network edition</h1>
+            
+            <form method="post" action="/" enctype="application/x-www-form-urlencoded">
+
+                <div id="errorMsg"></div>
+                
+                <div id="divInForm" class="mt-5 row">              
+                    <div class="col-6">
+                        <label for="nick_1">Välj nickname:</label>
+                        <input type="text" id="nick_1" name="nick_1" placeholder="nickname" class="form-control" title="nickname">
+                    </div>
+                    <div class="col-6">
+                        <label for="color_1">Välj färg:</label>
+                        <input type="color" id="color_1" name="color_1" class="form-control"
+                            title="färg för spelare">
+                    </div>
+                    <div class="col-12 text-right mt-5">
+                        <button type="submit" class="btn btn-primary mr-0">Gå med i spelet</button>
+                    </div>               
+                </div>
+            </form>     
+        </main>
+
+
+
+    </body>
+</html>

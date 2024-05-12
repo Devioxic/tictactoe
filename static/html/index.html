@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Tic-Tac-Toe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class="container">
+        <header class="jumbotron text-center mt-3" style="background: linear-gradient(to bottom, rgba(231, 166, 166, 0.9) 0%,rgba(125,185,232,0) 100%);">     
+            <h1>Tic-Tac-Toe network edition</h1>
+            <h4 id="players" class="list-group">-</h4>           
+        </header>
+        <main class="text-center">
+            <h4 id="status">Väntar på spelare 2</h4>
+            <img id="spinner" alt="" src="public/images/spinner.gif">
+            <div id="gameArea" class="container row justify-content-center mt-5"></div>                
+        </main>
+        <footer class="d-none">
+            <a href="/" class="btn btn-primary">Spela igen</a> 
+            <a href="/reset" class="btn btn-primary">Åter till startsidan</a>
+        </footer>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="public/clientscripts/client-script.js"></script>
+    </body>
+</html>
