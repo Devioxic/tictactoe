@@ -7,5 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tilly Persson",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "inquirer": "^9.2.20",
+    "jsdom": "^24.0.0",
+    "path": "^0.12.7",
+    "puppeteer": "^22.8.0",
+    "vm": "^0.1.0"
+  }
 }

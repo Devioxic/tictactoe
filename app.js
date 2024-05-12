@@ -82,12 +82,10 @@ app.post('/', (req, res) => {
         // Cookie max age 2 hours, server only
         res.cookie('nickName', req.body.nick_1, { maxAge: 7200000, httpOnly: true });
         res.cookie('color', req.body.color_1, { maxAge: 7200000, httpOnly: true });
-        console.log('Cookies set');
         res.redirect('/');
     } catch (error) {
         fs.readFile(__dirname + '/static/html/loggain.html', 'utf8', (err, data) => {
             if (err) {
-                console.error(err);
                 res.status(500).send('Internal server error');
             } else {
                 const dom = new jsDOM.JSDOM(data);
@@ -95,11 +93,8 @@ app.post('/', (req, res) => {
                 const errorDiv = document.querySelector('#errorMsg');
                 errorDiv.textContent = error.message;
                 const colorInput = document.querySelector('#color_1');
-                console.log(req.body.color_1);
                 colorInput.value = req.body.color_1;
                 const nickInput = document.querySelector('#nick_1');
-                console.log(typeof req.body.nick_1);
-                console.log(req.body.nick_1);
                 nickInput.value = req.body.nick_1;
                 res.send(dom.serialize());
             }
