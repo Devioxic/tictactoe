@@ -125,6 +125,8 @@ function executeMove(evt) {
         //Ta bort lyssnare
         removeListenerFromTable();
 
+        console.log('executeMove', evt.target.getAttribute('data-cellId'));
+
         //Skicka drag till server
         socket.emit('newMove', { "cellId" : evt.target.getAttribute('data-cellId') });
 
