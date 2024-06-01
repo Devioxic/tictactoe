@@ -125,10 +125,12 @@ function executeMove(evt) {
         //Ta bort lyssnare
         removeListenerFromTable();
 
-        console.log('executeMove', evt.target.getAttribute('data-cellId'));
+        console.log('sending newMove');
 
         //Skicka drag till server
         socket.emit('newMove', { "cellId" : evt.target.getAttribute('data-cellId') });
+
+        console.log('sent newMove');
 
         //Uppdera status
         document.querySelector('#status').textContent = globalObject.opponentNick + "'s drag";
